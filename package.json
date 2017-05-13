@@ -1,10 +1,10 @@
 {
   "name": "gourmet-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "gourmet-api",
   "license": "MIT",
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/Zonarius/gourmet-api",
+  "author": "Zonarius",
   "keywords": [
     ""
   ],
