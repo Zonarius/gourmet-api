@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Allergen, MealDetail, MealListItem, MealProperty } from "./model";
+import { Allergen, isValidAllergen, MealDetail, MealListItem, MealProperty } from "./model";
 
 export function parseProductList(html: string): MealListItem[] {
     const $ = cheerio.load(html);
@@ -37,7 +37,7 @@ export function parseProductDetail(html: string): MealDetail {
         protein: nr($('tbody tr').eq(6).find('td').eq(2).text()),
         salt: nr($('tbody tr').eq(7).find('td').eq(2).text()),
         breadunit: nr($('tbody tr').eq(8).find('td').eq(2).text()),
-        allergens: $('.allergennames').text().split(',').map(it => it.trim() as Allergen)
+        allergens: parseAllergens($.root())
     };
 }
 
@@ -46,6 +46,20 @@ function parseProperties(meal: Cheerio): MealProperty[] {
         .map(el => el.attribs['alt'] as MealProperty);
 }
 
+function parseAllergens(meal: Cheerio): Allergen[] {
+    const allergens = meal.find('.allergennames').text().split(',').map(it => it.trim() as Allergen);
+    if (allergens.some(it => !isValidAllergen(it))) {
+        return null;
+    } else {
+        return allergens;
+    }
+}
+
 function nr(input: string): number {
-    return +input.match(/\d+(,\d+)?/)[0].replace(',', '.');
+    const match = input.match(/\d+(,\d+)?/);
+    if (match === null) {
+        return null;
+    } else {
+        return +match[0].replace(',', '.');
+    }
 }

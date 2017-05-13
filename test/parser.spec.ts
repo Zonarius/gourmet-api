@@ -78,6 +78,29 @@ describe("parser", () => {
       expect(meal.allergens).to.eql(['A', 'G', 'L', 'O']);
       expect(meal.available).to.be.false;
     });
+
+    it('must be able to handle missing data', () => {
+      const meal = parser.parseProductDetail(loadTestHtml('missing-data'));
+      expect(meal.name).to.equal('BIO-Karpfen "serbische Art" mit Nockerl');
+      expect(meal.mealId).to.equal(2301658);
+      expect(meal.imageUrl).to.equal('https://gourmetalaclick.blob.core.windows.net/img/mealitems/2301658.png');
+      expect(meal.description).to.equal('Gebratener BIO-Karpfen in einer leichten Paprikasauce, mit rotem Paprikagemüse und Nockerln mit Petersilie verfeinert.');
+      expect(meal.weight).to.be.null;
+      expect(meal.properties).to.eql(['Schweinefleischfrei', 'BIO']);
+      expect(meal.price).to.equal(7.91);
+      expect(meal.id).to.equal(1000055);
+      expect(meal.kJ).to.be.null;
+      expect(meal.kcal).to.be.null;
+      expect(meal.fat).to.be.null;
+      expect(meal.saturated).to.be.null;
+      expect(meal.carbohydrate).to.be.null;
+      expect(meal.sugar).to.be.null;
+      expect(meal.protein).to.be.null;
+      expect(meal.salt).to.be.null;
+      expect(meal.breadunit).to.be.null;
+      expect(meal.allergens).to.be.null;
+      expect(meal.available).to.be.false;
+    });
   });
 });
 

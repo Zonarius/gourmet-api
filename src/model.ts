@@ -27,3 +27,24 @@ export interface MealDetail extends MealListItem {
 
 export type MealProperty = "Fit mit Genuss" | "XXL" | "Schweinefleischfrei" | "Ohne Zutat Laktose" | "Vegetarisch" | "Ohne Zutat Gluten" | "Vegan" | "BIO";
 export type Allergen = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "K" | "L" | "M" | "N" | "O" | "P" | "R";
+const validAllergen: {[allergen: string]: boolean} = {
+    A: true,
+    B: true,
+    C: true,
+    D: true,
+    E: true,
+    F: true,
+    G: true,
+    H: true,
+    K: true,
+    L: true,
+    M: true,
+    N: true,
+    O: true,
+    P: true,
+    R: true
+};
+
+export function isValidAllergen(text: string): text is Allergen {
+    return !!validAllergen[text];
+}

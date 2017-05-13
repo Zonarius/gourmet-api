@@ -24,3 +24,4 @@ export interface MealDetail extends MealListItem {
 }
 export declare type MealProperty = "Fit mit Genuss" | "XXL" | "Schweinefleischfrei" | "Ohne Zutat Laktose" | "Vegetarisch" | "Ohne Zutat Gluten" | "Vegan" | "BIO";
 export declare type Allergen = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "K" | "L" | "M" | "N" | "O" | "P" | "R";
+export declare function isValidAllergen(text: string): text is Allergen;
