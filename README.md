@@ -1,8 +1,12 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 # API for alaclick.gourmet.at
+## Install
+```bash
+npm install gourmet-api --save
+```
 
-Usage example:
+## Usage
 ```Typescript
 import { GourmetAPI } from "gourmet-api";
 
