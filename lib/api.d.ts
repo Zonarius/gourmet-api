@@ -1,4 +1,5 @@
 import { MealDetail, MealListItem } from "./model";
+export * from './model';
 export declare class GourmetAPI {
     private http;
     constructor();

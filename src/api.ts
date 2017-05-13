@@ -3,6 +3,8 @@ import * as rp from 'request-promise-native';
 import { MealDetail, MealListItem } from "./model";
 import { parseProductDetail, parseProductList } from "./parser";
 
+export * from './model';
+
 const baseUrl = 'https://alaclick.gourmet.at/frontend4/';
 const page = 'default.aspx';
 
