@@ -15,3 +15,25 @@ const api = new GourmetAPI();
     console.log(meal);
 })();
 ```
+Output:
+```Javascript
+{ name: 'Schweinskarree in Pfeffersauce mit Rosmarinkartoffeln und Gartengemüse',
+  mealId: 2302202,
+  imageUrl: 'https://gourmetalaclick.blob.core.windows.net/img/mealitems/2302202.png',
+  description: 'Zwei zarte Schweinskarrees in Pfeffersauce mit Rosmarinkartoffeln und Gartengemüse mit gelben und grünen Bohnen und Perlkarotten.',
+  weight: 420,
+  properties: [ 'Fit mit Genuss' ],
+  price: 5.98,
+  id: 5448,
+  available: true,
+  kJ: 1698,
+  kcal: 405,
+  fat: 15.7,
+  saturated: 6.3,
+  carbohydrate: 29.5,
+  sugar: 8.8,
+  protein: 33.4,
+  salt: 6.1,
+  breadunit: 2.5,
+  allergens: [ 'A', 'G', 'L' ] }
+```
