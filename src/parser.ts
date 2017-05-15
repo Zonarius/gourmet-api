@@ -56,7 +56,7 @@ function parseAllergens(meal: Cheerio): Allergen[] {
 }
 
 function nr(input: string): number {
-    const match = input.match(/\d+(,\d+)?/);
+    const match = input.match(/\d+([.,]\d+)?/);
     if (match === null) {
         return null;
     } else {

@@ -101,6 +101,12 @@ describe("parser", () => {
       expect(meal.allergens).to.be.null;
       expect(meal.available).to.be.false;
     });
+
+    it('must be able to handle both commas', () => {
+      const meal = parser.parseProductDetail(loadTestHtml('nutella-knoedel'));
+      expect(meal.name).to.equal('Nutella-Topfenknödeln mit Haselnussbröseln');
+      expect(meal.weight).to.equal(1.450);
+    });
   });
 });
 
